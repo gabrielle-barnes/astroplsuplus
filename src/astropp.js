@@ -1,1 +1,1 @@
-console.log("Hello from astropp.js");
+console.log("Hello from astropp.js")
