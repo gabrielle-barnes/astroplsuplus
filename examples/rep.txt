@@ -1,0 +1,60 @@
+program 
+    stmt[0]: Assignment
+        target:
+            Variable: 
+                name: radius
+        source:
+            Binary Expression
+            left: 55.2
+            op: *
+            right: BinaryExpression
+                left: BinaryExpression
+                    left: Unary Expression
+                    op: -
+                    operand: Call
+                        callee: Function
+                            name: cos
+                        args[0]: 2.8E-20
+                    op: +
+                    right: 89
+                op: %
+                right: 21
+
+    stmt[1]: Assignment
+        target: Variable
+            name: the_area
+        source: BinaryExpression
+            left: Variable  
+                name: pi 
+            op: *
+            right: BinaryExpression
+                left: Variable
+                    name: "radius"
+                op: "**"
+                right: 2
+
+    stmt[2]: IfStmt
+        test: BinaryExpression
+            left: Variable  
+                name: radius
+            op: "<"
+            right: 50.0
+        consequent: Block
+            stmt[0]: PrintStmt
+            ...
+            stmt[1]: WhileStmt
+                test: BinaryExpression
+                    op: "<="
+                    left: Variable  
+                        name: the_area
+                    right: 0
+                body: Block 
+                    stmt[0]: BreakStmt
+        alternate: IfStmt
+            test: true
+            consequence: PrintStmt
+                argument: 1
+            alternate: Assignment
+                target: Variable
+                    name: radius
+                source: 2.0
