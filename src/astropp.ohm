@@ -8,8 +8,8 @@ AstroPlusPlus {
   Assignment  = id "=" Exp ";"
   Print       = print Exp ";"
   IfStmt      = if Exp Block ElsePart?
-  ElsePart    = else IfStmt
-              | else Block
+  ElsePart    = else IfStmt                           --nested_if
+              | else Block                            --else_block
   WhileStmt   = while Exp Block
   Block       = "{" Stmt+ "}"
   BreakStmt   = break ";"
